@@ -9,7 +9,6 @@
         <e p="CalculatorOOPv1.0.csproj" t="IncludeRecursive" />
         <e p="Classes" t="Include">
           <e p="Calculate.cs" t="Include" />
-          <e p="CustomBtn.cs" t="Include" />
           <e p="Display.cs" t="Include" />
           <e p="Errors.cs" t="Include" />
         </e>

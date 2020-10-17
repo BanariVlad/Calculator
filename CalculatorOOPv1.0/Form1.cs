@@ -7,33 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CalculatorOOPv1._0.Classes;
 
 namespace CalculatorOOPv1._0
 {
     public partial class Form1 : Form
     {
+        private readonly Display _display = new Display();
+
         public Form1()
         {
-            
-            var top = 50;
-            for (var i = 0; i < 6; i++)
-            {
-                var left = 10;
-                for (var j = 0; j < 4; j++)
-                {
-                    var button = new Button();
-                    button.Left = left;
-                    button.Top = top;
-
-                    this.Controls.Add(button);
-                    left += button.Width + 2;
-                }
-
-                top += 30;
-                left = 10;
-            };
+            _display.GenerateStructure(this);
             InitializeComponent();
         }
-
     }
 }
