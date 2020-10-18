@@ -145,7 +145,6 @@ namespace CalculatorOOPv1._0.Classes
                     Location = new Point(10, top),
                     Size = new Size(100, 20)
                 };
-                Console.WriteLine(prevValue.Text);
                 var result = new Label
                 {
                     Text = item.Result,
