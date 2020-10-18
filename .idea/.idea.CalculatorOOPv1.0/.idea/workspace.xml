@@ -22,19 +22,17 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9bde900c-aba6-4a81-8698-a875e6bd1f08" name="Default Changelist" comment="">
+    <list default="true" id="9bde900c-aba6-4a81-8698-a875e6bd1f08" name="Default Changelist" comment="Dynamic buttons and events">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CalculatorOOPv1.0/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CalculatorOOPv1.0/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CalculatorOOPv1.0/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CalculatorOOPv1.0/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalculatorOOPv1.0/Classes/CustomBtn.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CalculatorOOPv1.0/Classes/Calculate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CalculatorOOPv1.0/Classes/Calculate.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CalculatorOOPv1.0/Classes/Display.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CalculatorOOPv1.0/Classes/Display.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalculatorOOPv1.0/Form1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CalculatorOOPv1.0/Form1.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalculatorOOPv1.0/Form1.resx" beforeDir="false" afterPath="$PROJECT_DIR$/CalculatorOOPv1.0/Form1.resx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CalculatorOOPv1.0/Classes/Errors.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CalculatorOOPv1.0/Classes/Memory.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CalculatorOOPv1.0/bin/Debug/netcoreapp3.1/CalculatorOOPv1.0.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CalculatorOOPv1.0/bin/Debug/netcoreapp3.1/CalculatorOOPv1.0.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CalculatorOOPv1.0/bin/Debug/netcoreapp3.1/CalculatorOOPv1.0.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CalculatorOOPv1.0/bin/Debug/netcoreapp3.1/CalculatorOOPv1.0.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalculatorOOPv1.0/obj/Debug/netcoreapp3.1/CalculatorOOPv1.0.csproj.GenerateResource.cache" beforeDir="false" afterPath="$PROJECT_DIR$/CalculatorOOPv1.0/obj/Debug/netcoreapp3.1/CalculatorOOPv1.0.csproj.GenerateResource.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CalculatorOOPv1.0/obj/Debug/netcoreapp3.1/CalculatorOOPv1.0.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/CalculatorOOPv1.0/obj/Debug/netcoreapp3.1/CalculatorOOPv1.0.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CalculatorOOPv1.0/obj/Debug/netcoreapp3.1/CalculatorOOPv1.0.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CalculatorOOPv1.0/obj/Debug/netcoreapp3.1/CalculatorOOPv1.0.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CalculatorOOPv1.0/obj/Debug/netcoreapp3.1/CalculatorOOPv1.0.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CalculatorOOPv1.0/obj/Debug/netcoreapp3.1/CalculatorOOPv1.0.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalculatorOOPv1.0/obj/Debug/netcoreapp3.1/CalculatorOOPv1._0.Form1.resources" beforeDir="false" afterPath="$PROJECT_DIR$/CalculatorOOPv1.0/obj/Debug/netcoreapp3.1/CalculatorOOPv1._0.Form1.resources" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,15 +42,19 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/AD61CA47-F8B7-4CC6-93A0-BA44CC73B5C7/72/Double.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/CalculatorOOPv1.0/Classes/Errors.cs" />
         <option value="$PROJECT_DIR$/CalculatorOOPv1.0/Form1.Designer.cs" />
-        <option value="$PROJECT_DIR$/CalculatorOOPv1.0/Classes/Calculate.cs" />
         <option value="$PROJECT_DIR$/CalculatorOOPv1.0/Classes/CustomBtn.cs" />
         <option value="$PROJECT_DIR$/CalculatorOOPv1.0/Form1.cs" />
+        <option value="$PROJECT_DIR$/CalculatorOOPv1.0/Classes/Errors.cs" />
+        <option value="$PROJECT_DIR$/CalculatorOOPv1.0/Classes/Calculate.cs" />
         <option value="$PROJECT_DIR$/CalculatorOOPv1.0/Classes/Display.cs" />
+        <option value="$PROJECT_DIR$/CalculatorOOPv1.0/Classes/Memory.cs" />
       </list>
     </option>
   </component>
@@ -65,6 +67,8 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="ReSpellerSettingsId" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
@@ -98,8 +102,17 @@
       <workItem from="1602141629656" duration="3319000" />
       <workItem from="1602524585188" duration="7162000" />
       <workItem from="1602607184523" duration="2128000" />
-      <workItem from="1602927066412" duration="16964000" />
+      <workItem from="1602927066412" duration="18410000" />
+      <workItem from="1603006776750" duration="16188000" />
     </task>
+    <task id="LOCAL-00001" summary="Dynamic buttons and events">
+      <created>1602949962923</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1602949962923</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -117,9 +130,12 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Dynamic buttons and events" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dynamic buttons and events" />
   </component>
   <component name="WindowStateProjectService">
     <state x="666" y="418" width="438" height="204" key="Github.ShareDialog" timestamp="1602532239653">
@@ -130,29 +146,37 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="728" y="226" key="Github.UntrackedFilesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602532289486" />
-    <state width="1877" height="127" key="GridCell.Tab.0.bottom" timestamp="1602949727467">
+    <state width="1877" height="127" key="GridCell.Tab.0.bottom" timestamp="1603026418427">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="127" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1602949727467" />
-    <state width="1877" height="127" key="GridCell.Tab.0.center" timestamp="1602949727467">
+    <state width="1877" height="127" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1603026418427" />
+    <state width="1877" height="127" key="GridCell.Tab.0.center" timestamp="1603026418427">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="127" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1602949727467" />
-    <state width="1877" height="127" key="GridCell.Tab.0.left" timestamp="1602949727467">
+    <state width="1877" height="127" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1603026418427" />
+    <state width="1877" height="127" key="GridCell.Tab.0.left" timestamp="1603026418426">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="127" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1602949727467" />
-    <state width="1877" height="127" key="GridCell.Tab.0.right" timestamp="1602949727467">
+    <state width="1877" height="127" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1603026418426" />
+    <state width="1877" height="127" key="GridCell.Tab.0.right" timestamp="1603026418427">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="127" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1602949727467" />
+    <state width="1877" height="127" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1603026418427" />
+    <state x="461" y="165" key="SettingsEditor" timestamp="1603026232125">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1603026232125" />
     <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog" timestamp="1602932847787">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602932847787" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1602949906556">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1602949964435">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1602949906556" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1602949964435" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1603025399315">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1603025399315" />
   </component>
 </project>

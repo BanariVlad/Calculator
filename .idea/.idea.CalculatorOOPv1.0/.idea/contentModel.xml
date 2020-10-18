@@ -10,7 +10,7 @@
         <e p="Classes" t="Include">
           <e p="Calculate.cs" t="Include" />
           <e p="Display.cs" t="Include" />
-          <e p="Errors.cs" t="Include" />
+          <e p="Memory.cs" t="Include" />
         </e>
         <e p="Form1.cs" t="Include" />
         <e p="Form1.Designer.cs" t="Include" />
