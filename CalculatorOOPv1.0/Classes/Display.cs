@@ -11,6 +11,8 @@ namespace CalculatorOOPv1._0.Classes
 {
     public class Display
     {
+        private static Memory memory = new Memory();
+        private static Form history = new Form();
         private readonly string[] _buttons =
         {
             "%", "CE", "C", "<",
@@ -23,7 +25,7 @@ namespace CalculatorOOPv1._0.Classes
 
         private readonly Label _labelPrevValue = new Label
         {
-            Location = new Point(10, 10),
+            Location = new Point(10, 30),
             Size = new Size(320, 20)
         };
 
@@ -52,7 +54,7 @@ namespace CalculatorOOPv1._0.Classes
             else if (isModificator)
                 Modificate(value);
             else if (value == "=")
-                Equal(value);
+                Equal();
             else
                 Actions(value);
         }
@@ -80,11 +82,13 @@ namespace CalculatorOOPv1._0.Classes
                 calc.CalculateModificator(value) == "Error" ? "" : calc.CalculateModificator(value);
         }
 
-        private void Equal(string value)
+        private void Equal()
         {
             var calc = new Calculate(_labelCurrentValue.Text, _prevValue, _operand);
+            _labelPrevValue.Text += _labelCurrentValue.Text;
             _labelCurrentValue.Text =
                 calc.CalculateResult() == "Error" ? _labelCurrentValue.Text : calc.CalculateResult();
+            memory.AddHistory(_labelPrevValue.Text, _labelCurrentValue.Text);
             _labelPrevValue.Text = "";
             _prevValue = "";
             _operand = "";
@@ -120,10 +124,46 @@ namespace CalculatorOOPv1._0.Classes
             }
         }
 
+        private static void CreateHistory(Control form)
+        {
+            var historyBtn = new Button
+            {
+                Text = @"H", Location = new Point(150, 5), Size = new Size(25, 25)
+            };
+            historyBtn.Click += OpenHistory;
+            form.Controls.Add(historyBtn);
+        }
+
+        private static void OpenHistory(object sender, EventArgs e)
+        {
+            var top = 10;
+            foreach (var item in memory.History)
+            {
+                var prevValue = new Label
+                {
+                    Text = item.PrevValue,
+                    Location = new Point(10, top),
+                    Size = new Size(100, 20)
+                };
+                Console.WriteLine(prevValue.Text);
+                var result = new Label
+                {
+                    Text = item.Result,
+                    Location = new Point(10, top + 20),
+                    Size = new Size(100, 20)
+                };
+                top += 40;
+                history.Controls.Add(prevValue);
+                history.Controls.Add(result);
+            }
+            history.ShowDialog();
+        }
+
         public void GenerateStructure(Form form)
         {
             var top = 100;
             var textIndex = 0;
+            CreateHistory(form);
             form.Controls.Add(_labelPrevValue);
             form.Controls.Add(_labelCurrentValue);
             for (var i = 0; i < 6; i++)
