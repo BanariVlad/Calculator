@@ -69,8 +69,7 @@ namespace CalculatorOOPv1._0.Classes
                     Location = new Point(10, top + 20),
                     Size = new Size(100, 20)
                 };
-                prevValue.Tag = new HistoryItem{PrevValue = prevValue.Text, Result = result.Text};
-                prevValue.Click += OpenHistory;
+                prevValue.Click += (sender, e) => OpenHistory(prevValue.Text, result.Text);
                 top += 40;
                 Display.history.Controls.Add(prevValue);
                 Display.history.Controls.Add(result);
@@ -79,9 +78,11 @@ namespace CalculatorOOPv1._0.Classes
             Display.history.ShowDialog();
         }
 
-        private static void OpenHistory(object sender, EventArgs e)
+        private static void OpenHistory(string prev, string res)
         {
-            var test = ((Label)sender).Tag;
+            Display._labelCurrentValue.Text = res;
+            Display._labelPrevValue.Text = prev;
+            Display.history.Close();
         }
     }
 
