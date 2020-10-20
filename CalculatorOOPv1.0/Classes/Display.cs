@@ -11,8 +11,9 @@ namespace CalculatorOOPv1._0.Classes
 {
     public class Display
     {
-        private static Memory memory = new Memory();
-        private static Form history = new Form();
+        public static Memory memory = new Memory();
+        public static Form history = new Form();
+
         private readonly string[] _buttons =
         {
             "%", "CE", "C", "<",
@@ -23,19 +24,27 @@ namespace CalculatorOOPv1._0.Classes
             "±", "0", ",", "="
         };
 
-        private readonly Label _labelPrevValue = new Label
+        public static Label _labelPrevValue = new Label
         {
             Location = new Point(10, 30),
-            Size = new Size(320, 20)
+            Size = new Size(310, 20),
+            ForeColor = Color.White,
+            Font = new Font("Britannic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0),
+            TextAlign = ContentAlignment.MiddleRight
         };
 
-        private readonly Label _labelCurrentValue = new Label
+        public static Label _labelCurrentValue = new Label
         {
             Location = new Point(10, 50),
-            Size = new Size(320, 20)
+            Size = new Size(310, 20),
+            ForeColor = Color.White,
+            Font = new Font("Britannic Bold", 18F),
+            TextAlign = ContentAlignment.MiddleRight
         };
 
+        private bool _wasCalculated;
         private string _prevValue = "";
+        private string _currentValue = "";
         private string _operand;
 
         private void BtnClick(object sender, EventArgs e)
@@ -45,18 +54,34 @@ namespace CalculatorOOPv1._0.Classes
             var isOperand = new[] {"+", "-", "x", "/"}.Contains(value);
             var isModificator = new[] {"%", "1/x", "x^2", "√x"}.Contains(value);
 
-            if (isNum || value == "," && !_labelCurrentValue.Text.Contains(","))
+            if (isModificator)
+                Modificate(value);
+            else if (_wasCalculated && ValidValue(value, isOperand, isModificator))
+                AddDigit(value);
+            else if (isNum || value == "," && !_labelCurrentValue.Text.Contains(","))
                 _labelCurrentValue.Text += value;
             else if (_prevValue == "" && isOperand && _labelCurrentValue.Text != "")
                 CalcOperand(value);
+            else if (isOperand && _currentValue != "")
+                AddOperand(value, _currentValue);
             else if (isOperand && _labelCurrentValue.Text != "")
-                AddOperand(value);
-            else if (isModificator)
-                Modificate(value);
+                AddOperand(value, _labelCurrentValue.Text);
             else if (value == "=")
                 Equal();
             else
                 Actions(value);
+        }
+
+        private void AddDigit(string value)
+        {
+            _currentValue = _labelCurrentValue.Text;
+            _labelCurrentValue.Text = value;
+            _wasCalculated = false;
+        }
+
+        private static bool ValidValue(string value, bool isOperand, bool isModificator)
+        {
+            return !isModificator && !isOperand && value != "C" && value != "CE" && value != "<" && value != "±" && value != "=";
         }
 
         private void CalcOperand(string value)
@@ -67,12 +92,14 @@ namespace CalculatorOOPv1._0.Classes
             _labelCurrentValue.Text = "";
         }
 
-        private void AddOperand(string value)
+        private void AddOperand(string value, string currentValue)
         {
             _labelPrevValue.Text += _labelCurrentValue.Text + value;
-            var calc = new Calculate(_labelCurrentValue.Text, _prevValue, _operand);
+            var calc = new Calculate(currentValue, _prevValue, _operand);
             _labelCurrentValue.Text = calc.CalculateResult();
             _operand = value;
+            _wasCalculated = true;
+            _currentValue = "";
         }
 
         private void Modificate(string value)
@@ -123,17 +150,6 @@ namespace CalculatorOOPv1._0.Classes
                 //ignore
             }
         }
-
-        private static void CreateHistory(Control form)
-        {
-            var historyBtn = new Button
-            {
-                Text = @"H", Location = new Point(150, 5), Size = new Size(25, 25)
-            };
-            historyBtn.Click += OpenHistory;
-            form.Controls.Add(historyBtn);
-        }
-
         private static void OpenHistory(object sender, EventArgs e)
         {
             var top = 10;
@@ -155,6 +171,7 @@ namespace CalculatorOOPv1._0.Classes
                 history.Controls.Add(prevValue);
                 history.Controls.Add(result);
             }
+
             history.ShowDialog();
         }
 
@@ -162,7 +179,7 @@ namespace CalculatorOOPv1._0.Classes
         {
             var top = 100;
             var textIndex = 0;
-            CreateHistory(form);
+            Memory.CreateHistory(form);
             form.Controls.Add(_labelPrevValue);
             form.Controls.Add(_labelCurrentValue);
             for (var i = 0; i < 6; i++)
@@ -172,8 +189,19 @@ namespace CalculatorOOPv1._0.Classes
                 {
                     var btn = new Button
                     {
-                        Text = _buttons[textIndex], Location = new Point(left, top),
-                        Size = new Size(74, 47)
+                        Text = _buttons[textIndex],
+                        Location = new Point(left, top),
+                        Size = new Size(74, 47),
+                        BackColor = Color.FromArgb(53, 57, 87),
+                        Cursor = Cursors.Hand,
+                        FlatAppearance =
+                        {
+                            BorderColor = Color.White, BorderSize = 0, MouseDownBackColor = Color.Transparent,
+                            MouseOverBackColor = Color.FromArgb(255, 221, 60)
+                        },
+                        FlatStyle = FlatStyle.Flat,
+                        Font = new Font("Britannic Bold", 18F, FontStyle.Regular, GraphicsUnit.Point, 0),
+                        ForeColor = Color.Transparent,
                     };
                     btn.Click += BtnClick;
 

@@ -22,6 +22,10 @@ namespace CalculatorOOPv1._0.Classes
             {
                 var curVal = Convert.ToDouble(_currentValue);
                 var prevVal = Convert.ToDouble(_prevValue);
+                if (curVal == 0 && _operand == "/")
+                {
+                    throw new Exception();
+                }
                 return _operand switch
                 {
                     "+" => (curVal + prevVal).ToString(),
