@@ -1,94 +1,50 @@
 ﻿using System;
-using System.Drawing;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace CalculatorOOPv1._0.Classes
 {
-    public class Memory
+    public class Memory : Calculate
     {
-        public HistoryItem[] History = { };
+        private static string _currentValue;
+        private static string _prevValue;
+        private static string _operand;
+        private static string _memoryValue;
 
-        public void AddHistory(string prevValue, string result)
+        public Memory(string currentValue, string prevValue, string operand) : base(currentValue, prevValue, operand)
         {
-            try
+            _currentValue = currentValue;
+            _prevValue = prevValue;
+            _operand = operand;
+        }
+
+        private static void SaveMemory()
+        {
+            var result = CalculateResult(_currentValue, _prevValue, _operand);
+            Console.WriteLine(result);
+        }
+
+        private static void ClearMemory()
+        {
+            _memoryValue = "";
+        }
+
+        public static void MemoryAction(Button btn, string value)
+        {
+            switch (value)
             {
-                if (prevValue != "" && result != "" && result != "," && prevValue != result)
-                {
-                    var item = new HistoryItem {PrevValue = prevValue, Result = result};
-                    Array.Resize(ref History, History.Length + 1);
-                    History[^1] = item;
-                }
-                else
-                {
-                    throw new Exception();
-                }
+                case "MC":
+                    btn.Click += (sender, e) => ClearMemory();
+                    break;
+                case "MR":
+                    break;
+                case "+":
+                    break;
+                case "-":
+                    break;
+                case "MS":
+                    btn.Click += (sender, e) => SaveMemory();
+                    break;
             }
-            catch
-            {
-                //ignore
-            }
         }
-        
-        public static void CreateHistory(Control form)
-        {
-            var historyBtn = new Button
-            {
-                Text = @"H",
-                Location = new Point(150, 5),
-                Size = new Size(25, 25),
-                BackColor = Color.FromArgb(53, 57, 87),
-                Cursor = Cursors.Hand,
-                FlatAppearance =
-                {
-                    BorderColor = Color.White, BorderSize = 0, MouseDownBackColor = Color.Transparent,
-                    MouseOverBackColor = Color.FromArgb(255, 221, 60)
-                },
-                FlatStyle = FlatStyle.Flat,
-                Font = new Font("Britannic Bold", 18F, FontStyle.Regular, GraphicsUnit.Point, 0),
-                ForeColor = Color.Transparent
-            };
-            historyBtn.Click += GenerateHistory;
-            form.Controls.Add(historyBtn);
-        }
-        
-        private static void GenerateHistory(object sender, EventArgs e)
-        {
-            var top = 10;
-            foreach (var item in Display.memory.History)
-            {
-                var prevValue = new Label
-                {
-                    Text = item.PrevValue,
-                    Location = new Point(10, top),
-                    Size = new Size(100, 20)
-                };
-                var result = new Label
-                {
-                    Text = item.Result,
-                    Location = new Point(10, top + 20),
-                    Size = new Size(100, 20)
-                };
-                prevValue.Click += (sender, e) => OpenHistory(prevValue.Text, result.Text);
-                top += 40;
-                Display.history.Controls.Add(prevValue);
-                Display.history.Controls.Add(result);
-            }
-
-            Display.history.ShowDialog();
-        }
-
-        private static void OpenHistory(string prev, string res)
-        {
-            Display._labelCurrentValue.Text = res;
-            Display._labelPrevValue.Text = prev;
-            Display.history.Close();
-        }
-    }
-
-    public class HistoryItem
-    {
-        public string PrevValue;
-        public string Result;
     }
 }

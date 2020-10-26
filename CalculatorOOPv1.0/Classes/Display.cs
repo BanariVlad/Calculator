@@ -11,8 +11,8 @@ namespace CalculatorOOPv1._0.Classes
 {
     public class Display
     {
-        public static Memory memory = new Memory();
-        public static Form history = new Form();
+        public static readonly History History = new History();
+        public static readonly Form HistoryForm = new Form();
 
         private readonly string[] _buttons =
         {
@@ -24,7 +24,7 @@ namespace CalculatorOOPv1._0.Classes
             "±", "0", ",", "="
         };
 
-        public static Label _labelPrevValue = new Label
+        public static readonly Label LabelPrevValue = new Label
         {
             Location = new Point(10, 30),
             Size = new Size(310, 20),
@@ -33,7 +33,7 @@ namespace CalculatorOOPv1._0.Classes
             TextAlign = ContentAlignment.MiddleRight
         };
 
-        public static Label _labelCurrentValue = new Label
+        public static readonly Label LabelCurrentValue = new Label
         {
             Location = new Point(10, 50),
             Size = new Size(310, 20),
@@ -58,14 +58,14 @@ namespace CalculatorOOPv1._0.Classes
                 Modificate(value);
             else if (_wasCalculated && ValidValue(value, isOperand, isModificator))
                 AddDigit(value);
-            else if (isNum || value == "," && !_labelCurrentValue.Text.Contains(","))
-                _labelCurrentValue.Text += value;
-            else if (_prevValue == "" && isOperand && _labelCurrentValue.Text != "")
+            else if (isNum || value == "," && !LabelCurrentValue.Text.Contains(","))
+                LabelCurrentValue.Text += value;
+            else if (_prevValue == "" && isOperand && LabelCurrentValue.Text != "")
                 CalcOperand(value);
             else if (isOperand && _currentValue != "")
                 AddOperand(value, _currentValue);
-            else if (isOperand && _labelCurrentValue.Text != "")
-                AddOperand(value, _labelCurrentValue.Text);
+            else if (isOperand && LabelCurrentValue.Text != "")
+                AddOperand(value, LabelCurrentValue.Text);
             else if (value == "=")
                 Equal();
             else
@@ -74,29 +74,30 @@ namespace CalculatorOOPv1._0.Classes
 
         private void AddDigit(string value)
         {
-            _currentValue = _labelCurrentValue.Text;
-            _labelCurrentValue.Text = value;
+            _currentValue = LabelCurrentValue.Text;
+            LabelCurrentValue.Text = value;
             _wasCalculated = false;
         }
 
         private static bool ValidValue(string value, bool isOperand, bool isModificator)
         {
-            return !isModificator && !isOperand && value != "C" && value != "CE" && value != "<" && value != "±" && value != "=";
+            return !isModificator && !isOperand && value != "C" && value != "CE" && value != "<" && value != "±" &&
+                   value != "=";
         }
 
         private void CalcOperand(string value)
         {
             _operand = value;
-            _prevValue = _labelCurrentValue.Text;
-            _labelPrevValue.Text = _prevValue + _operand;
-            _labelCurrentValue.Text = "";
+            _prevValue = LabelCurrentValue.Text;
+            LabelPrevValue.Text = _prevValue + _operand;
+            LabelCurrentValue.Text = "";
         }
 
         private void AddOperand(string value, string currentValue)
         {
-            _labelPrevValue.Text += _labelCurrentValue.Text + value;
+            LabelPrevValue.Text += LabelCurrentValue.Text + value;
             var calc = new Calculate(currentValue, _prevValue, _operand);
-            _labelCurrentValue.Text = calc.CalculateResult();
+            LabelCurrentValue.Text = Calculate.CalculateResult(LabelCurrentValue.Text, _prevValue, _operand);
             _operand = value;
             _wasCalculated = true;
             _currentValue = "";
@@ -104,19 +105,21 @@ namespace CalculatorOOPv1._0.Classes
 
         private void Modificate(string value)
         {
-            var calc = new Calculate(_labelCurrentValue.Text, _prevValue, _operand);
-            _labelCurrentValue.Text =
+            var calc = new Calculate(LabelCurrentValue.Text, _prevValue, _operand);
+            LabelCurrentValue.Text =
                 calc.CalculateModificator(value) == "Error" ? "" : calc.CalculateModificator(value);
         }
 
         private void Equal()
         {
-            var calc = new Calculate(_labelCurrentValue.Text, _prevValue, _operand);
-            _labelPrevValue.Text += _labelCurrentValue.Text;
-            _labelCurrentValue.Text =
-                calc.CalculateResult() == "Error" ? _labelCurrentValue.Text : calc.CalculateResult();
-            memory.AddHistory(_labelPrevValue.Text, _labelCurrentValue.Text);
-            _labelPrevValue.Text = "";
+            var calc = new Calculate(LabelCurrentValue.Text, _prevValue, _operand);
+            LabelPrevValue.Text += LabelCurrentValue.Text;
+            LabelCurrentValue.Text =
+                Calculate.CalculateResult(LabelCurrentValue.Text, _prevValue, _operand) == "Error"
+                    ? LabelCurrentValue.Text
+                    : Calculate.CalculateResult(LabelCurrentValue.Text, _prevValue, _operand);
+            History.AddHistory(LabelPrevValue.Text, LabelCurrentValue.Text);
+            LabelPrevValue.Text = "";
             _prevValue = "";
             _operand = "";
         }
@@ -128,20 +131,20 @@ namespace CalculatorOOPv1._0.Classes
                 switch (value)
                 {
                     case "C":
-                        _labelCurrentValue.Text = "";
-                        _labelPrevValue.Text = "";
+                        LabelCurrentValue.Text = "";
+                        LabelPrevValue.Text = "";
                         _prevValue = "";
                         _operand = "";
                         break;
                     case "<":
-                        _labelCurrentValue.Text =
-                            _labelCurrentValue.Text.Remove(_labelCurrentValue.Text.Length - 1);
+                        LabelCurrentValue.Text =
+                            LabelCurrentValue.Text.Remove(LabelCurrentValue.Text.Length - 1);
                         break;
                     case "±":
-                        _labelCurrentValue.Text = (Convert.ToDouble(_labelCurrentValue.Text) * -1).ToString();
+                        LabelCurrentValue.Text = (Convert.ToDouble(LabelCurrentValue.Text) * -1).ToString();
                         break;
                     case "CE":
-                        _labelCurrentValue.Text = "";
+                        LabelCurrentValue.Text = "";
                         break;
                 }
             }
@@ -150,10 +153,11 @@ namespace CalculatorOOPv1._0.Classes
                 //ignore
             }
         }
+
         private static void OpenHistory(object sender, EventArgs e)
         {
             var top = 10;
-            foreach (var item in memory.History)
+            foreach (var item in History.HistoryItems)
             {
                 var prevValue = new Label
                 {
@@ -168,20 +172,21 @@ namespace CalculatorOOPv1._0.Classes
                     Size = new Size(100, 20)
                 };
                 top += 40;
-                history.Controls.Add(prevValue);
-                history.Controls.Add(result);
+                HistoryForm.Controls.Add(prevValue);
+                HistoryForm.Controls.Add(result);
             }
 
-            history.ShowDialog();
+            HistoryForm.ShowDialog();
         }
 
         public void GenerateStructure(Form form)
         {
-            var top = 100;
+            var top = 120;
             var textIndex = 0;
-            Memory.CreateHistory(form);
-            form.Controls.Add(_labelPrevValue);
-            form.Controls.Add(_labelCurrentValue);
+            History.CreateHistory(form);
+            GenerateMemoryButtons(form);
+            form.Controls.Add(LabelPrevValue);
+            form.Controls.Add(LabelCurrentValue);
             for (var i = 0; i < 6; i++)
             {
                 var left = 10;
@@ -197,7 +202,7 @@ namespace CalculatorOOPv1._0.Classes
                         FlatAppearance =
                         {
                             BorderColor = Color.White, BorderSize = 0, MouseDownBackColor = Color.Transparent,
-                            MouseOverBackColor = Color.FromArgb(255, 221, 60)
+                            MouseOverBackColor = Color.FromArgb(108, 99, 255)
                         },
                         FlatStyle = FlatStyle.Flat,
                         Font = new Font("Britannic Bold", 18F, FontStyle.Regular, GraphicsUnit.Point, 0),
@@ -211,6 +216,34 @@ namespace CalculatorOOPv1._0.Classes
                 }
 
                 top += 50;
+            }
+        }
+
+        private static void GenerateMemoryButtons(Control form)
+        {
+            var memoryButtons = new string[] {"MC", "MR", "+", "-", "MS"};
+            var left = 10;
+            foreach (var button in memoryButtons)
+            {
+                var btn = new Button
+                {
+                    Text = button,
+                    Location = new Point(left, 90),
+                    Size = new Size(58, 27),
+                    BackColor = Color.FromArgb(53, 57, 87),
+                    Cursor = Cursors.Hand,
+                    FlatAppearance =
+                    {
+                        BorderColor = Color.White, BorderSize = 0, MouseDownBackColor = Color.Transparent,
+                        MouseOverBackColor = Color.FromArgb(108, 99, 255)
+                    },
+                    FlatStyle = FlatStyle.Flat,
+                    Font = new Font("Britannic Bold", 18F, FontStyle.Regular, GraphicsUnit.Point, 0),
+                    ForeColor = Color.Transparent,
+                };
+                Memory.MemoryAction(btn, button);
+                left += btn.Width + 3;
+                form.Controls.Add(btn);
             }
         }
     }

@@ -16,17 +16,17 @@ namespace CalculatorOOPv1._0.Classes
             _operand = operand;
         }
 
-        public string CalculateResult()
+        public static string CalculateResult(string currentValue, string prevValue, string operand)
         {
             try
             {
-                var curVal = Convert.ToDouble(_currentValue);
-                var prevVal = Convert.ToDouble(_prevValue);
-                if (curVal == 0 && _operand == "/")
+                var curVal = Convert.ToDouble(currentValue);
+                var prevVal = Convert.ToDouble(prevValue);
+                if (curVal == 0 && operand == "/")
                 {
                     throw new Exception();
                 }
-                return _operand switch
+                return operand switch
                 {
                     "+" => (curVal + prevVal).ToString(),
                     "-" => (prevVal - curVal).ToString(),
