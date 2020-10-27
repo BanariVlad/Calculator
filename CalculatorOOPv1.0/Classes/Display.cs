@@ -43,9 +43,9 @@ namespace CalculatorOOPv1._0.Classes
         };
 
         private bool _wasCalculated;
-        private string _prevValue = "";
+        public static string PrevValue = "";
         private string _currentValue = "";
-        private string _operand;
+        public static string Operand;
 
         private void BtnClick(object sender, EventArgs e)
         {
@@ -60,7 +60,7 @@ namespace CalculatorOOPv1._0.Classes
                 AddDigit(value);
             else if (isNum || value == "," && !LabelCurrentValue.Text.Contains(","))
                 LabelCurrentValue.Text += value;
-            else if (_prevValue == "" && isOperand && LabelCurrentValue.Text != "")
+            else if (PrevValue == "" && isOperand && LabelCurrentValue.Text != "")
                 CalcOperand(value);
             else if (isOperand && _currentValue != "")
                 AddOperand(value, _currentValue);
@@ -87,41 +87,41 @@ namespace CalculatorOOPv1._0.Classes
 
         private void CalcOperand(string value)
         {
-            _operand = value;
-            _prevValue = LabelCurrentValue.Text;
-            LabelPrevValue.Text = _prevValue + _operand;
+            Operand = value;
+            PrevValue = LabelCurrentValue.Text;
+            LabelPrevValue.Text = PrevValue + Operand;
             LabelCurrentValue.Text = "";
         }
 
         private void AddOperand(string value, string currentValue)
         {
             LabelPrevValue.Text += LabelCurrentValue.Text + value;
-            var calc = new Calculate(currentValue, _prevValue, _operand);
-            LabelCurrentValue.Text = Calculate.CalculateResult(LabelCurrentValue.Text, _prevValue, _operand);
-            _operand = value;
+            var calc = new Calculate(currentValue, PrevValue, Operand);
+            LabelCurrentValue.Text = Calculate.CalculateResult(LabelCurrentValue.Text, PrevValue, Operand);
+            Operand = value;
             _wasCalculated = true;
             _currentValue = "";
         }
 
         private void Modificate(string value)
         {
-            var calc = new Calculate(LabelCurrentValue.Text, _prevValue, _operand);
+            var calc = new Calculate(LabelCurrentValue.Text, PrevValue, Operand);
             LabelCurrentValue.Text =
                 calc.CalculateModificator(value) == "Error" ? "" : calc.CalculateModificator(value);
         }
 
         private void Equal()
         {
-            var calc = new Calculate(LabelCurrentValue.Text, _prevValue, _operand);
+            var calc = new Calculate(LabelCurrentValue.Text, PrevValue, Operand);
             LabelPrevValue.Text += LabelCurrentValue.Text;
             LabelCurrentValue.Text =
-                Calculate.CalculateResult(LabelCurrentValue.Text, _prevValue, _operand) == "Error"
+                Calculate.CalculateResult(LabelCurrentValue.Text, PrevValue, Operand) == "Error"
                     ? LabelCurrentValue.Text
-                    : Calculate.CalculateResult(LabelCurrentValue.Text, _prevValue, _operand);
+                    : Calculate.CalculateResult(LabelCurrentValue.Text, PrevValue, Operand);
             History.AddHistory(LabelPrevValue.Text, LabelCurrentValue.Text);
             LabelPrevValue.Text = "";
-            _prevValue = "";
-            _operand = "";
+            PrevValue = "";
+            Operand = "";
         }
 
         private void Actions(string value)
@@ -133,8 +133,8 @@ namespace CalculatorOOPv1._0.Classes
                     case "C":
                         LabelCurrentValue.Text = "";
                         LabelPrevValue.Text = "";
-                        _prevValue = "";
-                        _operand = "";
+                        PrevValue = "";
+                        Operand = "";
                         break;
                     case "<":
                         LabelCurrentValue.Text =

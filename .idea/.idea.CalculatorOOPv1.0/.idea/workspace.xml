@@ -22,21 +22,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9bde900c-aba6-4a81-8698-a875e6bd1f08" name="Default Changelist" comment="History">
-      <change afterPath="$PROJECT_DIR$/CalculatorOOPv1.0/Classes/History.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.CalculatorOOPv1.0/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CalculatorOOPv1.0/.idea/contentModel.xml" afterDir="false" />
+    <list default="true" id="9bde900c-aba6-4a81-8698-a875e6bd1f08" name="Default Changelist" comment="Memory">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CalculatorOOPv1.0/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CalculatorOOPv1.0/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalculatorOOPv1.0/Classes/Calculate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CalculatorOOPv1.0/Classes/Calculate.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CalculatorOOPv1.0/Classes/Display.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CalculatorOOPv1.0/Classes/Display.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CalculatorOOPv1.0/Classes/Memory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CalculatorOOPv1.0/Classes/Memory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalculatorOOPv1.0/Form1.resx" beforeDir="false" afterPath="$PROJECT_DIR$/CalculatorOOPv1.0/Form1.resx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CalculatorOOPv1.0/bin/Debug/netcoreapp3.1/CalculatorOOPv1.0.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CalculatorOOPv1.0/bin/Debug/netcoreapp3.1/CalculatorOOPv1.0.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CalculatorOOPv1.0/bin/Debug/netcoreapp3.1/CalculatorOOPv1.0.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CalculatorOOPv1.0/bin/Debug/netcoreapp3.1/CalculatorOOPv1.0.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalculatorOOPv1.0/obj/Debug/netcoreapp3.1/CalculatorOOPv1.0.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/CalculatorOOPv1.0/obj/Debug/netcoreapp3.1/CalculatorOOPv1.0.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalculatorOOPv1.0/obj/Debug/netcoreapp3.1/CalculatorOOPv1.0.csproj.GenerateResource.cache" beforeDir="false" afterPath="$PROJECT_DIR$/CalculatorOOPv1.0/obj/Debug/netcoreapp3.1/CalculatorOOPv1.0.csproj.GenerateResource.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CalculatorOOPv1.0/obj/Debug/netcoreapp3.1/CalculatorOOPv1.0.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CalculatorOOPv1.0/obj/Debug/netcoreapp3.1/CalculatorOOPv1.0.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CalculatorOOPv1.0/obj/Debug/netcoreapp3.1/CalculatorOOPv1.0.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CalculatorOOPv1.0/obj/Debug/netcoreapp3.1/CalculatorOOPv1.0.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalculatorOOPv1.0/obj/Debug/netcoreapp3.1/CalculatorOOPv1._0.Form1.resources" beforeDir="false" afterPath="$PROJECT_DIR$/CalculatorOOPv1.0/obj/Debug/netcoreapp3.1/CalculatorOOPv1._0.Form1.resources" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +43,7 @@
     <setting file="file://$USER_HOME$/Desktop/All/University/calculator/calculator/Form1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/Desktop/All/University/calculator/calculator/Calc.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CalculatorOOPv1.0/Classes/History.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa17544.18367/Calculator/Calculator/Form1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/AD61CA47-F8B7-4CC6-93A0-BA44CC73B5C7/72/Double.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -119,7 +113,11 @@
       <workItem from="1603212009699" duration="8887000" />
       <workItem from="1603262479999" duration="2392000" />
       <workItem from="1603642167937" duration="936000" />
-      <workItem from="1603736653179" duration="7555000" />
+      <workItem from="1603736653179" duration="7572000" />
+      <workItem from="1603784792308" duration="611000" />
+      <workItem from="1603787158449" duration="71000" />
+      <workItem from="1603816856414" duration="44000" />
+      <workItem from="1603820825186" duration="1972000" />
     </task>
     <task id="LOCAL-00001" summary="Dynamic buttons and events">
       <created>1602949962923</created>
@@ -163,7 +161,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603225187905</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Memory">
+      <created>1603744658432</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1603744658432</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -190,7 +195,8 @@
     <MESSAGE value="Changes" />
     <MESSAGE value="Some changes" />
     <MESSAGE value="History" />
-    <option name="LAST_COMMIT_MESSAGE" value="History" />
+    <MESSAGE value="Memory" />
+    <option name="LAST_COMMIT_MESSAGE" value="Memory" />
   </component>
   <component name="WindowStateProjectService">
     <state x="666" y="418" width="438" height="204" key="Github.ShareDialog" timestamp="1602532239653">
@@ -201,22 +207,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="728" y="226" key="Github.UntrackedFilesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602532289486" />
-    <state width="1877" height="127" key="GridCell.Tab.0.bottom" timestamp="1603743966422">
+    <state width="1877" height="127" key="GridCell.Tab.0.bottom" timestamp="1603822738558">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="127" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1603743966422" />
-    <state width="1877" height="127" key="GridCell.Tab.0.center" timestamp="1603743966422">
+    <state width="1877" height="127" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1603822738558" />
+    <state width="1877" height="127" key="GridCell.Tab.0.center" timestamp="1603822738558">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="127" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1603743966422" />
-    <state width="1877" height="127" key="GridCell.Tab.0.left" timestamp="1603743966422">
+    <state width="1877" height="127" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1603822738558" />
+    <state width="1877" height="127" key="GridCell.Tab.0.left" timestamp="1603822738558">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="127" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1603743966422" />
-    <state width="1877" height="127" key="GridCell.Tab.0.right" timestamp="1603743966422">
+    <state width="1877" height="127" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1603822738558" />
+    <state width="1877" height="127" key="GridCell.Tab.0.right" timestamp="1603822738558">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="127" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1603743966422" />
+    <state width="1877" height="127" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1603822738558" />
     <state width="1877" height="375" key="GridCell.Tab.1.bottom" timestamp="1603123846425">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -281,6 +287,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="375" key="GridCell.Tab.4.right/0.0.1920.1040@0.0.1920.1040" timestamp="1603123846426" />
+    <state x="552" y="252" key="Rider.ProjectTemplateDialog.Size" timestamp="1603785692628">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="252" key="Rider.ProjectTemplateDialog.Size/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1603785692628" />
     <state x="461" y="165" key="SettingsEditor" timestamp="1603026232125">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -289,14 +299,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602932847787" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1603225188964">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1603744659963">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1603225188964" />
-    <state x="616" y="240" key="run.anything.popup" timestamp="1603222357471">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1603744659963" />
+    <state x="638" y="119" width="644" height="801" key="find.popup" timestamp="1603822669710">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1603222357471" />
+    <state x="638" y="119" width="644" height="801" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1603822669710" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1603821543414">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1603821543414" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1603743250262">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
